@@ -3,7 +3,7 @@ function anagrams(first, second) {
       return false;
     }
   
-    // Add the values to lookup in {a: 2, b: 1} for first string aab
+    // Add the values to lookup in {a: 2, b: 1} for first string ex: "aab"
     const lookup = {};
   
     for(let i=0; i<first.length; i++) {
