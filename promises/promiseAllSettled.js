@@ -9,8 +9,8 @@ const promise1 = () => {
 const promise2 = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            reject("Rejected promise 2")
-        }, 100)
+            resolve("Resolved promise 2")
+        }, 1000)
     })
 }
 
@@ -22,7 +22,7 @@ const promise3 = () => {
     })
 }
 
-Promise.race([promise1(), promise2(), promise3()]).then((res) => {
+Promise.allSettled([promise1(), promise2(), promise3()]).then((res) => {
     console.log(res)
 }).catch((err) => {
     console.log(err);
