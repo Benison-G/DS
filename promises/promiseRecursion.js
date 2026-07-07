@@ -1,0 +1,35 @@
+const promise1 = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Resolved promise 1")
+        }, 1000)
+    })
+}
+
+const promise2 = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Resolved promise 2")
+        }, 1000)
+    })
+}
+
+const promise3 = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Resolved promise 3")
+        }, 1000)
+    })
+}
+
+const promiseRecursion = (promises) => {
+    if (promises.length === 0) return 0;
+
+    const currPromise = promises.shift();
+
+    currPromise().then(res => console.log(res)).catch(err => console.log(err));
+
+    promiseRecursion(promises)
+}
+
+promiseRecursion([promise1, promise2, promise3]);
