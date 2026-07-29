@@ -1,9 +1,10 @@
-const arr = [4,2, 10,3,7,1]
-const sum = (n) => {
-    if (arr[n] % 2 === 0) return 0; 
-    if (n === 0) return arr[n];
+const arr = [9, 4,2, 10,3,7,1]
 
-    return arr[n] + sum(n - 1);
-} 
+const sumOfOddNumbers = (n) => {
+    const isOdd = arr[n] % 2 !== 0;
 
-console.log(sum(arr.length - 1));;
+    if (n === 0) return isOdd ? arr[n] : 0;
+    
+    return (isOdd ? arr[n] : 0) + sumOfOddNumbers(n - 1);
+}
+console.log(sumOfOddNumbers(arr.length - 1));;
