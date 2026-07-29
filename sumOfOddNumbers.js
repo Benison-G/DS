@@ -1,5 +1,6 @@
 const arr = [4,2, 10,3,7,1]
 const sum = (n) => {
+    if (arr[n] % 2 === 0) return 0; 
     if (n === 0) return arr[n];
 
     return arr[n] + sum(n - 1);
