@@ -1,29 +1,27 @@
-function anagrams(first, second) {
-    if (first.length != second.length) {
-      return false;
-    }
-  
-    // Add the values to lookup in {a: 2, b: 1} for first string ex: "aab"
-    const lookup = {};
-  
-    for(let i=0; i<first.length; i++) {
-      let letter = first[i];
-      // if letter found in lookup then increment else set to 1
-      lookup[letter] ? lookup[letter]+=1 : lookup[letter] = 1;
-    }
-  
-    for(let i=0; i<second.length; i++) {
-      let letter = second[i];
-      // if letter no found in the lookup return false else reduce letter count in lookup
-      if(!lookup[letter]) {
+function isAnagram(str1, str2) {
+    if (str1.length !== str2.length) {
         return false;
-      } else {
-        lookup[letter] -= 1;
-      }
     }
-      return true;
-  }
-  
-  anagrams("anagram", "nagarami"); // should return false
-  anagrams("anagram", "nagmi"); // should return false
-  anagrams("anagram", "nagaram"); // should return true
+
+    const count = {};
+
+    for (let char of str1) {
+        count[char] = (count[char] || 0) + 1;
+    }
+
+    for (let char of str2) {
+        if (!count[char]) {
+            return false;
+        }
+
+        count[char]--;
+    }
+
+    return true;
+}
+
+console.log(isAnagram("listen", "silent")); // true
+
+console.log(isAnagram("anagram", "nagarami")); // should return false
+console.log(isAnagram("anagram", "nagmi")); // should return false
+console.log(isAnagram("anagram", "nagaram")); // should return true
