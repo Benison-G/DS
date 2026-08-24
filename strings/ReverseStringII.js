@@ -27,3 +27,6 @@ const reverseString = (s, k) => {
 }
 
 console.log(reverseString("abcdefg", 2))
+
+// Time comp = O (n) because j loop is finite one
+// Space complexity = O(n) because of string to array creation
