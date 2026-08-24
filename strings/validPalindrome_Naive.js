@@ -4,6 +4,7 @@ const isPalindrome = (s) => {
     let filteredString = "";
     let rev = ""
     for (let i = 0; i < s.length; i++) {
+        // Checks for only alpha numeric characters
         if (s[i].match(/[a-z0-9]/i)) {
             filteredString += s[i];
             rev = s[i] + rev;
