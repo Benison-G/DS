@@ -1,4 +1,5 @@
-// consider an array of integers, remove the passed in value occurance and keep other elements in order and return count of remaining.
+// consider an array of integers, remove the passed in value occurance and 
+// keep other elements in order and return COUNT of remaining.
 
 const removeElement = (a, val) => {
     let x = 0;
@@ -9,7 +10,7 @@ const removeElement = (a, val) => {
             x = x + 1;
         }
     }
-console.log(a)
+
     return x;
 }
  
