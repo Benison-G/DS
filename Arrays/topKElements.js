@@ -1,6 +1,7 @@
 const topKElements = (arr, k) => {
     let copyK = k;
     let temp = [];
+    // To find top k largest elements, just sort the list in descending order return top k
     for (let i = arr.length - 1; i > 0 && copyK > 0; i--) {
         temp.push(arr[i]);
         copyK--;
