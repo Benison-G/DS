@@ -26,3 +26,5 @@ const groupAnagrams = (strs) => {
 }
 
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+// O(m*n)
+// O(n)
