@@ -11,7 +11,7 @@ const groupAnagrams = (strs) => {
         }
 
         let key = "";
-        // we can also avoid this for loop by using freqArr.join("") as join in O(1)
+        // we can also avoid this for loop by using freqArr.join("") as join in O(1) with 26 letters only
         for (let k = 0; k < 26; k++) {
             key = key + "#" + freqArr[k];
         }
