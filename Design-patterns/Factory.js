@@ -19,10 +19,16 @@ function EmployeeFactory () {
     }
 }
 
+function sayName() {
+    console.log(`I am a ${this.name}`)
+}
+
 const employeeFactory = new EmployeeFactory();
+
 const dev = employeeFactory.create("developer");
-console.log(dev.name)
-console.log("----------")
+sayName.call(dev)
+
+console.log("-------------------------")
 
 const tester = employeeFactory.create("tester");
-console.log(tester.name);
+sayName.call(tester)
