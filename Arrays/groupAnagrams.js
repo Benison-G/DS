@@ -22,7 +22,6 @@ var groupAnagrams = function (strs) {
 
     for (let str of strs) {
         const key = str.split("").sort().join("");
-        console.log(key)
         if (!map[key]) {
             map[key] = []
         }
@@ -33,3 +32,6 @@ var groupAnagrams = function (strs) {
 };
 
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+
+// O(n * mlogm)
+// O(n * m) // since length of string and length of array
