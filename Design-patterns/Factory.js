@@ -1,20 +1,18 @@
-function Developer (name) {
+function Developer(name) {
     this.name = name;
 }
 
-function Tester (name) {
+function Tester(name) {
     this.name = name;
 }
 
-function EmployeeFactory () {
+function EmployeeFactory() {
     this.create = (name) => {
-        switch (name){
+        switch (name) {
             case "developer": return new Developer(name)
-            break;
             case "tester": return new Tester(name)
-            break;
             default:
-                return "Pass a type to create an object" 
+                return "Pass a type to create an object"
         }
     }
 }
