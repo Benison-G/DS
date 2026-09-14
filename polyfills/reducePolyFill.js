@@ -1,7 +1,7 @@
 Array.prototype.myReduce = function (cb, initialValue) {
     var acc = initialValue;
     for(let i = 0; i < this.length; i++) {
-        acc = acc ? cb(acc, this[i], i, this) : this[i];
+        acc = cb(acc, this[i], i, this);
     }
     return acc;
 }
