@@ -47,6 +47,14 @@ for (let i = 0; i < 5; i++) {
     console.log(row);
 }
 
+/**
+ *  1 2 3 4 5
+    1 2 3 4
+    1 2 3
+    1 2
+    1
+ */
+
 for (let i = 0; i < 5; i++) {
     let row = "";
     for (let j = 0; j < 5 - (i + 1); j++) {
@@ -120,3 +128,17 @@ for (let i = 0; i < 5; i++) {
    10101
  * 
  */
+
+   for (let  i = 0; i < 5; i++) {
+    let row = "";
+    for (let j = 0; j < 5 - i; j++) {
+        row = row +  " "
+    } 
+
+    for (let k = 0; k < i + 1; k++) {
+        row = row + " *" // or cond: 2 * i + 1 and remove space before *
+    }
+    console.log(row)
+}
+
+// O/P - Pyramid of stars
