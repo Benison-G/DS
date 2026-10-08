@@ -1,5 +1,5 @@
 /**
- * This is solved via sliding window algorithm with 3 pointers
+ * This is solved via sliding window algorithm with 2 pointers
  */
 
 const firstSubString = (str, substr) => {
