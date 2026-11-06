@@ -12,4 +12,4 @@ const isSubSequence = (s, t) => {
     return  i === s.length;
 }
 
-console.log(isSubSequence("acb", "abcede"));
+console.log(isSubSequence("ace", "abcede")); // True
