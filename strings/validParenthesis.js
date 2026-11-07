@@ -8,19 +8,21 @@
 // Output: 3
  
 const minAddToMakeValid = (s) => {
-    const openCount = closeCount = 0;
+    let openCount = closeCount = 0;
 
-    for (let item of s) {
-        if (item =="(") {
-            ++openCount
+    for (let char of s) {
+        if (char === "(") {
+            openCount++
         } else {
             if (openCount == 0) {
-                ++closeCount
+                closeCount++
             } else {
                 --openCount
             }
         }
     }
 
-    return openCount + closeCount;
+    return openCount + closeCount
 }
+
+console.log(minAddToMakeValid("((()"))
