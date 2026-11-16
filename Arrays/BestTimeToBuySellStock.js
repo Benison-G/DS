@@ -35,16 +35,20 @@ Constraints:
  * @return {number}
  */
 var bestTimeToBuyStock = function(prices) {
-    let maxProfit = 0;
+    let min = prices[0];
+    let maxPft = 0;
 
-    for (let i = 1; i < prices.length; i++) {
-        let profit = prices[i] - prices[i - 1];
-        if (profit > 0) {
-            maxProfit += profit
+    for (let i = 0; i < prices.length; i++) {
+        if (prices[i] - min > maxPft) {
+            maxPft = prices[i] - min;
+        }
+
+        if (prices[i] < min) {
+            min = prices[i]
         }
     }
 
-    return maxProfit;
+    return maxPft
 };
 
 console.log(bestTimeToBuyStock([7,1,5,3,6,4]));
