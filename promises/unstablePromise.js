@@ -1,28 +1,29 @@
-let attempts = 0;
-
-const unstableFunction = () => {
-    return new Promise((resolve, reject) => {
-        attempts++;
-
+let attempts = 0
+const unstablePromise = () => {
+    attempts++
+    return new Promise((res, rej) => {
         setTimeout(() => {
             if (attempts < 5) {
-                reject(`${attempts} attempt failed`);
+                rej(`Attempt ${attempts} failed`)
             } else {
-                resolve(`${attempts} attempt succeeded`);
+                res(`Attempt ${attempts} succeeded`)
             }
         }, 1000)
     })
 }
 
-const retry = async (fn, retries) => {
+const retry = async (fn, retries, isRetry = false) => {
     try {
-        console.log("Loading...")
-        return await fn();
-    } catch(err) {
-        console.error(err);
-        if(retries <= 1) throw err;
-        return retry(fn, retries - 1 )
+        if (isRetry) {
+            console.log("Retrying...")
+        }
+
+        return await fn()
+    }
+    catch(err) {
+        console.log(err)
+        return retry(fn, retries - 1, true)
     }
 }
 
-retry(unstableFunction, 7).then(console.log).catch(console.error);
+retry(unstablePromise, 7).then(res => console.log(res)).catch(err => console.log(err))
